@@ -1,0 +1,5 @@
+rootProject.name = 'examples'
+
+include 'web'
+project(':web').projectDir = new File('../kir-web')
+

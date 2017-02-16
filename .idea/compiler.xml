@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="boot_main" target="1.8" />
+      <module name="boot_test" target="1.8" />
+      <module name="dom_main" target="1.8" />
+      <module name="dom_test" target="1.8" />
+      <module name="examples_main" target="1.8" />
+      <module name="examples_test" target="1.8" />
+      <module name="kir-boot_main" target="1.8" />
+      <module name="kir-boot_test" target="1.8" />
+      <module name="kir-dom_main" target="1.8" />
+      <module name="kir-dom_test" target="1.8" />
+      <module name="kir-examples_main" target="1.8" />
+      <module name="kir-examples_test" target="1.8" />
+      <module name="kir-web_main" target="1.8" />
+      <module name="kir-web_test" target="1.8" />
+      <module name="web_main" target="1.8" />
+      <module name="web_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
