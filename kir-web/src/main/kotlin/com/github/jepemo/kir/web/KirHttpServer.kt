@@ -4,12 +4,15 @@ import io.vertx.core.Vertx
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.RoutingContext
 import io.vertx.ext.web.handler.BodyHandler
+import mu.KLogging
 import java.util.*
 import kotlin.reflect.KFunction
 import kotlin.reflect.KParameter
 import kotlin.reflect.jvm.javaType
 
 class KirHttpServer (var port: Int = 8080) {
+    companion object: KLogging()
+
     val vertx = Vertx.vertx()
     val router = Router.router(vertx)
 
@@ -26,7 +29,7 @@ class KirHttpServer (var port: Int = 8080) {
     }
 
     fun addRoute(path: String, method: KFunction<*>) {
-        println("* Registering: " + path)
+        logger.debug { "* Registering: " + path }
         if (method.returnType.javaType.typeName.equals("java.lang.String")) {
             if (method.parameters.size == 0) {
                 router.get(path).handler({ routingContext ->
@@ -62,6 +65,15 @@ class KirHttpServer (var port: Int = 8080) {
                     response.end("" + result)
                 })
             }
+        }
+        else if (method.returnType.javaType.typeName.startsWith("java.util.List")) {
+            println("List")
+        }
+        else if (method.returnType.javaType.typeName.startsWith("java.util.Map")) {
+            println("Map")
+        }
+        else if (method.returnType is HttpResponse) {
+            println("HttpResponse")
         }
     }
 

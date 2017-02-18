@@ -1,4 +1,4 @@
-package helloworld
+package com.github.jepemo.kir.examples.web.helloworld
 
 import com.github.jepemo.kir.web.*
 
