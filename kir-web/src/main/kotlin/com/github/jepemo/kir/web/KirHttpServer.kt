@@ -1,5 +1,7 @@
 package com.github.jepemo.kir.web
 
+import com.github.jepemo.kir.web.HttpResponse.Error
+import com.github.jepemo.kir.web.HttpResponse.Text
 import io.vertx.core.Vertx
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.RoutingContext
@@ -8,6 +10,8 @@ import mu.KLogging
 import java.util.*
 import kotlin.reflect.KFunction
 import kotlin.reflect.KParameter
+import kotlin.reflect.KType
+import kotlin.reflect.full.isSubclassOf
 import kotlin.reflect.jvm.javaType
 
 class KirHttpServer (var port: Int = 8080) {
@@ -17,7 +21,7 @@ class KirHttpServer (var port: Int = 8080) {
     val router = Router.router(vertx)
 
     init {
-        router.route().handler(BodyHandler.create());
+        router.route().handler(BodyHandler.create())
     }
 
     fun start() {
@@ -29,52 +33,75 @@ class KirHttpServer (var port: Int = 8080) {
     }
 
     fun addRoute(path: String, method: KFunction<*>) {
-        logger.debug { "* Registering: " + path }
-        if (method.returnType.javaType.typeName.equals("java.lang.String")) {
-            if (method.parameters.size == 0) {
-                router.get(path).handler({ routingContext ->
-                    val response = routingContext.response()
-                    val result = method.call()
-                    response.putHeader("content-type", "text/plain")
-                    response.end("" + result)
-                })
+        logger.info { "* Registering: " + path }
+
+        val params = if (method.parameters.size > 0) {
+            extractParams(path)
+        } else {
+            ArrayList()
+        }
+
+        router.get(path).handler({ routingContext ->
+            val args = HashMap<KParameter, Any>()
+
+            if (params != null && params.size > 0) {
+                val urlValues = HashMap<String, String>()
+                for(param in params) {
+                    val requestValue = routingContext.request().getParam(param)
+                    if (requestValue != null) {
+                        urlValues.put(param, requestValue)
+                    }
+                }
+
+                val args = HashMap<KParameter, Any>()
+                for (kparam in method.parameters) {
+                    for (urlValue in urlValues) {
+                        if (kparam.name.equals(urlValue.key)) {
+                            args.put(kparam, urlValue.value)
+                        }
+                    }
+                }
+
+                println(args)
+            }
+
+            val result = if (method.parameters.size == 0) {
+                method.call()
             }
             else {
-                val params = extractParams(path)
-                router.get(path).handler({ routingContext ->
-                    val urlValues = HashMap<String, String>()
-                    for(param in params) {
-                        val requestValue = routingContext.request().getParam(param)
-                        if (requestValue != null) {
-                            urlValues.put(param, requestValue)
-                        }
-                    }
-
-                    val args = HashMap<KParameter, Any>()
-                    for (kparam in method.parameters) {
-                        for (urlValue in urlValues) {
-                            if (kparam.name.equals(urlValue.key)) {
-                                args.put(kparam, urlValue.value)
-                            }
-                        }
-                    }
-
-                    val result = method.callBy(args)
-                    val response = routingContext.response()
-                    response.putHeader("content-type", "text/plain")
-                    response.end("" + result)
-                })
+                method.callBy(args)
             }
+
+            val response = routingContext.response()
+
+            val res = createResponse(result, method.returnType)
+
+            response.statusCode = res.statusCode
+            response.putHeader("content-type", res.contentType)
+            response.end(res.out)
+        })
+    }
+
+    private fun  createResponse(result: Any?, type: KType): HttpResponse {
+        var httpResponse : HttpResponse = Error()
+        if (type.javaType.typeName.equals("java.lang.String")) {
+            httpResponse = Text(result as String)
         }
-        else if (method.returnType.javaType.typeName.startsWith("java.util.List")) {
-            println("List")
+        else if (type.javaType.typeName.startsWith("java.util.List")) {
+
         }
-        else if (method.returnType.javaType.typeName.startsWith("java.util.Map")) {
-            println("Map")
+        else if (type.javaType.typeName.startsWith("java.util.Map")) {
+
         }
-        else if (method.returnType is HttpResponse) {
-            println("HttpResponse")
+        else if (result is HttpResponse) {
+            httpResponse = result
         }
+        else {
+            logger.error { "Incorrect return type <$type> for router" }
+            System.exit(1)
+        }
+
+        return httpResponse
     }
 
     // TODO: Review, incorrect regular expression

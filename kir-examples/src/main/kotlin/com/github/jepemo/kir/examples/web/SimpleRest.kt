@@ -14,8 +14,8 @@ fun allUsers() = listOf<Map<String, Any>>(
     mapOf("id" to 3, "name" to "James", "surname" to "Moriarty", "active" to false)
 )
 
-@Route("/hello")
-fun hello() = Ok("Hello World")
+@Route("/movie")
+fun allMovies() = Json("{}")
 
 fun main(args : Array<String>) {
     App.start();

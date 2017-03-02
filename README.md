@@ -23,4 +23,14 @@ fun main(args : Array<String>) {
 #### Installation
 
 Todo
+
+### Reference
+
+#### Response Types
+
+```kotlin
+@Route("/")
+fun simple() = Ok("Hello")
+```
+
  
