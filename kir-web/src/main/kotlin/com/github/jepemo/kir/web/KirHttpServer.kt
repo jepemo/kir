@@ -3,6 +3,7 @@ package com.github.jepemo.kir.web
 import com.github.jepemo.kir.web.HttpResponse.Error
 import com.github.jepemo.kir.web.HttpResponse.Text
 import io.vertx.core.Vertx
+import io.vertx.core.json.JsonObject
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.RoutingContext
 import io.vertx.ext.web.handler.BodyHandler
@@ -11,6 +12,7 @@ import java.util.*
 import kotlin.reflect.KFunction
 import kotlin.reflect.KParameter
 import kotlin.reflect.KType
+import kotlin.reflect.full.cast
 import kotlin.reflect.full.isSubclassOf
 import kotlin.reflect.jvm.javaType
 
@@ -53,22 +55,25 @@ class KirHttpServer (var port: Int = 8080) {
                     }
                 }
 
-                val args = HashMap<KParameter, Any>()
                 for (kparam in method.parameters) {
-                    for (urlValue in urlValues) {
-                        if (kparam.name.equals(urlValue.key)) {
-                            args.put(kparam, urlValue.value)
+                    for ((key, value) in urlValues) {
+                        if (kparam.name.equals(key)) {
+                            args.put(kparam, value)
                         }
                     }
                 }
-
-                println(args)
             }
 
             val result = if (method.parameters.size == 0) {
                 method.call()
             }
             else {
+                // parameter #0 to of fun helloTo(kotlin.String): kotlin.String -> world
+                println ("Arguments:")
+                for ((k, v) in args) {
+                    println ("$k -> $v")
+                }
+
                 method.callBy(args)
             }
 
@@ -87,11 +92,8 @@ class KirHttpServer (var port: Int = 8080) {
         if (type.javaType.typeName.equals("java.lang.String")) {
             httpResponse = Text(result as String)
         }
-        else if (type.javaType.typeName.startsWith("java.util.List")) {
-
-        }
         else if (type.javaType.typeName.startsWith("java.util.Map")) {
-
+            httpResponse = HttpResponse.Json(JsonObject(result as Map<String, Any?>).toString())
         }
         else if (result is HttpResponse) {
             httpResponse = result

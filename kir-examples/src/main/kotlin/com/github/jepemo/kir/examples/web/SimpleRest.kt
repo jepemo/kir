@@ -5,20 +5,23 @@ import com.github.jepemo.kir.web.HttpResponse.*
 import com.github.jepemo.kir.web.Route
 
 @Route("/user/:id")
-fun findUser(id: Int) = mapOf("id" to id, "name" to "Sherlock", "surname" to "Holmes", "active" to true)
+fun findUser(id: String) = mapOf("id" to id, "name" to "Sherlock", "surname" to "Holmes", "active" to true)
 
 @Route("/user")
-fun allUsers() = listOf<Map<String, Any>>(
-    mapOf("id" to 1, "name" to "Sherlock", "surname" to "Holmes", "active" to true),
-    mapOf("id" to 2, "name" to "John", "surname" to "Watson", "active" to true),
-    mapOf("id" to 3, "name" to "James", "surname" to "Moriarty", "active" to false)
-)
+fun allUsers() =
+    mapOf(
+        "result" to listOf(
+            mapOf("id" to 1, "name" to "Sherlock", "surname" to "Holmes", "active" to true),
+            mapOf("id" to 2, "name" to "John", "surname" to "Watson", "active" to true),
+            mapOf("id" to 3, "name" to "James", "surname" to "Moriarty", "active" to false)
+        )
+    )
 
 @Route("/movie")
-fun allMovies() = Json("{}")
+fun allMovies() = Json("{ \"key\" : 1  }")
 
 fun main(args : Array<String>) {
-    App.start();
+    App.start()
 }
 
 
