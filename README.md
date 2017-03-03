@@ -1,7 +1,7 @@
 # kir
 KIR is an isomorphic Web Micro Framework for the [Kotlin](https://kotlinlang.org/) platform, influenced by [RedStone](http://redstonedart.org/) and [Meteor](https://www.meteor.com/).
 
-#### Example
+### Example
 Kir allows to use simple annotations to create the endpoints.
 
 ```kotlin
@@ -20,17 +20,40 @@ fun main(args : Array<String>) {
 }
 ```
 
-#### Installation
+### Installation
 
-Todo
+#### From source:
 
-### Reference
+Install *Gradle*
 
-#### Response Types
-
-```kotlin
-@Route("/")
-fun simple() = Ok("Hello")
+In Ubuntu:
+```bash
+sudo apt-get install gradle
 ```
+
+Download source
+
+```bash
+git clone https://github.com/jepemo/kir.git
+cd kir
+```
+
+Compile and install kir library
+
+```bash
+make install
+```
+
+Now you can use the *kb* command. Type:
+```bash
+kb help
+```
+
+### Documentation
+
+* [Intro](doc/intro.md)
+* [Routes](doc/routes.md)
+* [kb - Tutorial](doc/kb_tutorial.md)
+* [kb - Reference](doc/kb_reference.md)
 
  
