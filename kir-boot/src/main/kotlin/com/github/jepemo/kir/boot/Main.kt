@@ -3,12 +3,12 @@ package com.github.jepemo.kir.boot
 fun printHelp() {
     println("Usage: kb <action> [arguments]")
     println("List of actions:")
-    println("\thelp:\t")
-    println("\tcreate:\t")
-    println("\trun:\t")
-    println("\tdebug:\t")
-    println("\tdeploy:\t")
-    println("\tmongo:\t")
+    println("\thelp: Show this help :D\t")
+    println("\tcreate [name]: Create new *Kir* project\t")
+    println("\tdebug: Run project in *Debug* mode\t")
+    println("\trun: Run project\t")
+    println("\tdeploy: Export as executable *jar*\t")
+    println("\tmongo: Open *mongodb* console\t")
 }
 
 fun main(args: Array<String>) {
