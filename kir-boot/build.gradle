@@ -15,7 +15,13 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'application'
 
-mainClassName = 'boot.Main'
+mainClassName = 'com.github.jepemo.kir.boot.MainKt'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.github.jepemo.kir.boot.MainKt'
+    }
+}
 
 repositories {
     mavenCentral()

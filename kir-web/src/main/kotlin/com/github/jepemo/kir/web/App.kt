@@ -13,6 +13,9 @@ class App {
         fun addRoute(path: String, handler: (RoutingContext) -> Unit) {
             server.addRoute(path, handler)
         }
+//        fun addRoute(path: String, handler : () -> HttpResponse) {
+//            server.addRoute(path, )
+//        }
 
         fun setupConsoleLog() {
             System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "DEBUG")

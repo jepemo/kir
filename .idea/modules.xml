@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/boot.iml" filepath="$PROJECT_DIR$/.idea/modules/boot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/boot_main.iml" filepath="$PROJECT_DIR$/.idea/modules/boot_main.iml" group="boot" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/boot_test.iml" filepath="$PROJECT_DIR$/.idea/modules/boot_test.iml" group="boot" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dom.iml" filepath="$PROJECT_DIR$/.idea/modules/dom.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dom_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dom_main.iml" group="dom" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dom_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dom_test.iml" group="dom" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/examples.iml" filepath="$PROJECT_DIR$/.idea/modules/examples.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/examples_main.iml" filepath="$PROJECT_DIR$/.idea/modules/examples_main.iml" group="examples" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/examples_test.iml" filepath="$PROJECT_DIR$/.idea/modules/examples_test.iml" group="examples" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web.iml" filepath="$PROJECT_DIR$/.idea/modules/web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/web_main.iml" group="web" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/web_test.iml" group="web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kir-boot.iml" filepath="$PROJECT_DIR$/.idea/modules/kir-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kir-boot_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kir-boot_main.iml" group="kir-boot" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kir-boot_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kir-boot_test.iml" group="kir-boot" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398500064/web.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398500064/web.iml" group="web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398500064/web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398500064/web_main.iml" group="web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398500064/web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398500064/web_test.iml" group="web" />
     </modules>
   </component>
 </project>
