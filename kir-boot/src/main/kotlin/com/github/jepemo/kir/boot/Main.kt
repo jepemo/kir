@@ -39,7 +39,7 @@ fun main(args: Array<String>) {
 
         }
         "mongo" -> {
-
+//            Runtime.getRuntime().exec("mongo")
         }
         else -> {
             printHelp()

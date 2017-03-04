@@ -12,8 +12,6 @@ import java.util.*
 import kotlin.reflect.KFunction
 import kotlin.reflect.KParameter
 import kotlin.reflect.KType
-import kotlin.reflect.full.cast
-import kotlin.reflect.full.isSubclassOf
 import kotlin.reflect.jvm.javaType
 
 class KirHttpServer (var port: Int = 8080) {
@@ -37,7 +35,7 @@ class KirHttpServer (var port: Int = 8080) {
     fun addRoute(path: String, method: KFunction<*>) {
         logger.info { "* Registering: " + path }
 
-        val params = if (method.parameters.size > 0) {
+        val params = if (method.parameters.isNotEmpty()) {
             extractParams(path)
         } else {
             ArrayList()
@@ -46,7 +44,7 @@ class KirHttpServer (var port: Int = 8080) {
         router.get(path).handler({ routingContext ->
             val args = HashMap<KParameter, Any>()
 
-            if (params != null && params.size > 0) {
+            if (params.isNotEmpty()) {
                 val urlValues = HashMap<String, String>()
                 for(param in params) {
                     val requestValue = routingContext.request().getParam(param)
@@ -64,7 +62,7 @@ class KirHttpServer (var port: Int = 8080) {
                 }
             }
 
-            val result = if (method.parameters.size == 0) {
+            val result = if (method.parameters.isEmpty()) {
                 method.call()
             }
             else {
@@ -89,7 +87,7 @@ class KirHttpServer (var port: Int = 8080) {
 
     private fun  createResponse(result: Any?, type: KType): HttpResponse {
         var httpResponse : HttpResponse = Error()
-        if (type.javaType.typeName.equals("java.lang.String")) {
+        if (type.javaType.typeName == "java.lang.String") {
             httpResponse = Text(result as String)
         }
         else if (type.javaType.typeName.startsWith("java.util.Map")) {
@@ -110,11 +108,9 @@ class KirHttpServer (var port: Int = 8080) {
     private fun extractParams(path: String) : List<String> {
         val params = ArrayList<String>()
 
-        val regex = Regex("\\:([a-zA-Z]+)")
+        val regex = Regex(":([a-zA-Z]+)")
         for (mr in regex.findAll(path)) {
-            for (gValue in mr.groupValues) {
-                params.add(gValue)
-            }
+            params += mr.groupValues
         }
 
         return params
