@@ -32,6 +32,32 @@ class KirHttpServer (var port: Int = 8080) {
         router.get(path).handler(handler)
     }
 
+    fun addRoute(path: String, view: View) {
+        logger.info { "* Registering: " + path }
+        router.get(path).handler { routingContext ->
+            view.cxt = routingContext
+            val res = view.get()
+
+            val response = routingContext.response()
+
+            response.statusCode = res.statusCode
+            response.putHeader("content-type", res.contentType)
+            response.end(res.out)
+        }
+        router.post(path).handler { routingContext ->
+            view.cxt = routingContext
+            val res = view.post()
+
+            val response = routingContext.response()
+
+            response.statusCode = res.statusCode
+            response.putHeader("content-type", res.contentType)
+            response.end(res.out)
+        }
+    }
+
+//    fun addGet(path: String)
+
     fun addRoute(path: String, method: KFunction<*>) {
         logger.info { "* Registering: " + path }
 
