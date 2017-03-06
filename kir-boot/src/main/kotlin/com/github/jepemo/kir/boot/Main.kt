@@ -1,19 +1,29 @@
 package com.github.jepemo.kir.boot
 
-fun printHelp() {
+import com.github.jepemo.kir.boot.cmd.*
+
+fun printHelp(commands: List<Command>) {
     println("Usage: kb <action> [arguments]")
     println("List of actions:")
-    println("\thelp: Show this help :D\t")
-    println("\tcreate [name]: Create new *Kir* project\t")
-    println("\tdebug: Run project in *Debug* mode\t")
-    println("\trun: Run project\t")
-    println("\tdeploy: Export as executable *jar*\t")
-    println("\tmongo: Open *mongodb* console\t")
+    println("\thelp:\tShow this help :D")
+    for (cmd in commands) {
+        println("\t" + cmd.command + ": \t" + cmd.shortHelp)
+    }
 }
 
 fun main(args: Array<String>) {
+
+    val commands = listOf(
+        Compile(),
+        Create(),
+        Export(),
+        Mongo(),
+        Run(),
+        Test()
+    )
+
     if (args.isEmpty()) {
-        printHelp()
+        printHelp(commands)
         System.exit(0)
     }
 
@@ -25,25 +35,17 @@ fun main(args: Array<String>) {
         listOf<String>()
     }
 
-    when (action) {
-        "create" -> {
-            CreateAction.run(arguments)
+    var cmdExists = false
+    for (cmd in commands) {
+        if (action == cmd.command) {
+            cmdExists = true
+            cmd.run(arguments)
         }
-        "run" -> {
+    }
 
-        }
-        "debug" -> {
-
-        }
-        "deploy" -> {
-
-        }
-        "mongo" -> {
-//            Runtime.getRuntime().exec("mongo")
-        }
-        else -> {
-            printHelp()
-            System.exit(0)
-        }
+    if (!cmdExists) {
+        println("!! Command <$action> doesn't exists")
+        printHelp(commands)
+        System.exit(0)
     }
 }

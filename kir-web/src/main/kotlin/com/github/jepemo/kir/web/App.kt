@@ -2,9 +2,6 @@ package com.github.jepemo.kir.web
 
 import io.vertx.ext.web.RoutingContext
 import mu.KotlinLogging
-import java.lang.annotation.ElementType
-
-
 
 enum class HttpMethod {
     OPTIONS,

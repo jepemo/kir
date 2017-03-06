@@ -1,0 +1,32 @@
+group '__PKG_NAME__'
+version '__VERSION__'
+
+buildscript {
+    ext.kotlin_version = '__KOTLIN_VERSION__'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = '__PKG_NAME__.boot.MainKt'
+
+jar {
+    manifest {
+        attributes 'Main-Class': '__PKG_NAME__.boot.MainKt'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
