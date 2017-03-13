@@ -16,9 +16,16 @@ apply plugin: 'kotlin'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile 'junit:junit:4.12'
     compile project(path: ':web')
+    compile project(path: ':dom')
+
+//    testCompile 'junit:junit:4.12'
+//    testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
 }

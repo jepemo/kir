@@ -28,6 +28,7 @@
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/kir-dom" />
             <option value="$PROJECT_DIR$/kir-examples" />
             <option value="$PROJECT_DIR$/kir-web" />
           </set>

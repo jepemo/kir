@@ -3,6 +3,7 @@ version '__VERSION__'
 
 buildscript {
     ext.kotlin_version = '__KOTLIN_VERSION__'
+    ext.kotlinx_html_version = '__KOTLIN_HTML_VERSION__'
 
     repositories {
         mavenCentral()
@@ -29,4 +30,5 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlinx:kotlinx-html-js:${kotlinx_html_version}"
 }

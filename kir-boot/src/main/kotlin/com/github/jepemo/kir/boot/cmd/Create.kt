@@ -8,6 +8,7 @@ class Create : Command () {
     fun createBuildGradle(projectName: String, packageName: String, template: String) {
         Utils.readAndWrite("$template/build.gradle", projectName+"/build.gradle", mapOf(
                 "KOTLIN_VERSION" to "1.1.0",
+                "KOTLIN_HTML_VERSION" to "0.6.2",
                 "PKG_NAME" to packageName,
                 "VERSION" to "0.1"
         ))

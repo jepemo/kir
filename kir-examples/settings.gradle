@@ -1,5 +1,7 @@
 rootProject.name = 'examples'
 
 include 'web'
+include 'dom'
 project(':web').projectDir = new File('../kir-web')
+project(':dom').projectDir = new File('../kir-dom')
 
