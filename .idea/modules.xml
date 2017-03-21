@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dom.iml" filepath="$PROJECT_DIR$/.idea/modules/dom.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dom_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dom_main.iml" group="dom" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dom_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dom_test.iml" group="dom" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398518002/dom.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398518002/dom.iml" group="dom" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398518002/dom_main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398518002/dom_main.iml" group="dom" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398518002/dom_test.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398518002/dom_test.iml" group="dom" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/examples.iml" filepath="$PROJECT_DIR$/.idea/modules/examples.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/examples_main.iml" filepath="$PROJECT_DIR$/.idea/modules/examples_main.iml" group="examples" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/examples_test.iml" filepath="$PROJECT_DIR$/.idea/modules/examples_test.iml" group="examples" />

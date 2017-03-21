@@ -1,2 +1,5 @@
 rootProject.name = 'web'
 
+include 'dom'
+project(':dom').projectDir = new File('../kir-dom')
+

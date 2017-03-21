@@ -11,7 +11,7 @@ sealed class HttpResponse (val statusCode: Int, val contentType: String? = null,
     class Error : HttpResponse(500)
     //    class RedirectToStatic : HttpResponse()
 //    class RenderBinary : HttpResponse()
-    class Html(out: String) : HttpResponse(200, "text/plain", out)
+    class Html(out: String) : HttpResponse(200, "text/html", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n$out")
 
     class Json(out: String) : HttpResponse(200, "application/json", out)
     //    class RenderStatic: HttpResponse()

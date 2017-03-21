@@ -1,5 +1,6 @@
 package com.github.jepemo.kir.web
 
+import com.github.jepemo.kir.dom.HtmlDom
 import com.github.jepemo.kir.web.HttpResponse.Error
 import com.github.jepemo.kir.web.HttpResponse.Text
 import io.vertx.core.Vertx
@@ -118,6 +119,9 @@ class KirHttpServer (var port: Int = 8080) {
         }
         else if (type.javaType.typeName.startsWith("java.util.Map")) {
             httpResponse = HttpResponse.Json(JsonObject(result as Map<String, Any?>).toString())
+        }
+        else if (type.javaType.typeName.startsWith("com.github.jepemo.kir.dom.HtmlDom")) {
+            httpResponse = HttpResponse.Html((result as HtmlDom).content)
         }
         else if (result is HttpResponse) {
             httpResponse = result

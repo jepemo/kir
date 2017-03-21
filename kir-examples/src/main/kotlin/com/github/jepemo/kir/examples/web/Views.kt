@@ -1,13 +1,31 @@
 package com.github.jepemo.kir.examples.web
 
+import com.github.jepemo.kir.dom.Dom
 import com.github.jepemo.kir.web.App
 import com.github.jepemo.kir.web.HttpResponse
 import com.github.jepemo.kir.web.HttpResponse.*
+import com.github.jepemo.kir.web.Route
 import com.github.jepemo.kir.web.View
+import kotlinx.html.*
 
 class HelloView : View() {
     override fun get() : HttpResponse {
         return Ok("Hello world!!")
+    }
+}
+
+@Route("/headers")
+fun headers () = Dom.html {
+    head {
+
+    }
+
+    body {
+        h1 { +"Header 1" }
+        h2 { +"Header 2" }
+        h3 { +"Header 3" }
+        h4 { +"Header 4" }
+        h5 { +"Header 5" }
     }
 }
 
