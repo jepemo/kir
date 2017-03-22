@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56b0bc74-fe86-47f6-ae9b-25fe99b44cdc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules/dom.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules/dom_main.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules/dom_test.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/-1398500064/web_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/-1398500064/web_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/-1398500064/web_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/-1398500064/web_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Dom.kt" afterPath="$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Dom.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/dom/SimpleComponent.kt" afterPath="$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/dom/SimpleComponent.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/web/Views.kt" afterPath="$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/web/Views.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kir-web/build.gradle" afterPath="$PROJECT_DIR$/kir-web/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kir-web/settings.gradle" afterPath="$PROJECT_DIR$/kir-web/settings.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kir-web/src/main/kotlin/com/github/jepemo/kir/web/KirHttpServer.kt" afterPath="$PROJECT_DIR$/kir-web/src/main/kotlin/com/github/jepemo/kir/web/KirHttpServer.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kir-web/src/main/kotlin/com/github/jepemo/kir/web/Responses.kt" afterPath="$PROJECT_DIR$/kir-web/src/main/kotlin/com/github/jepemo/kir/web/Responses.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Component.kt" afterPath="$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Component.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/kir-examples/.gradle/" />
@@ -78,8 +64,8 @@
       <file leaf-file-name="Component.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Component.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="220">
+              <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -95,21 +81,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Views.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SimpleComponent.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/dom/SimpleComponent.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <element signature="e#44#149#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Views.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/web/Views.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+            <state relative-caret-position="146">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Responses.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Responses.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kir-web/src/main/kotlin/com/github/jepemo/kir/web/Responses.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="58" lean-forward="false" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+            <state relative-caret-position="506">
+              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -130,8 +128,8 @@
       <file leaf-file-name="Dom.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Dom.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            <state relative-caret-position="440">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
                 <element signature="e#35#121#0" expanded="true" />
               </folding>
@@ -1327,7 +1325,6 @@
         <option value="$PROJECT_DIR$/kir-examples/settings.gradle" />
         <option value="$PROJECT_DIR$/kir-dom/build.gradle" />
         <option value="$PROJECT_DIR$/kir-examples/build.gradle" />
-        <option value="$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Component.kt" />
         <option value="$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/dom/SimpleComponent.kt" />
         <option value="$PROJECT_DIR$/kir-web/build.gradle" />
         <option value="$PROJECT_DIR$/kir-web/settings.gradle" />
@@ -1335,6 +1332,7 @@
         <option value="$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Dom.kt" />
         <option value="$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/web/Views.kt" />
         <option value="$PROJECT_DIR$/kir-web/src/main/kotlin/com/github/jepemo/kir/web/Responses.kt" />
+        <option value="$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Component.kt" />
       </list>
     </option>
   </component>
@@ -2002,7 +2000,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27726808" sideWeight="0.5207547" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27726808" sideWeight="0.47924528" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27726808" sideWeight="0.47924528" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2304,28 +2302,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/dom/SimpleComponent.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#44#149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kir-web/src/main/kotlin/com/github/jepemo/kir/web/App.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
           <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Component.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2370,13 +2350,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Dom.kt">
+    <entry file="file://$PROJECT_DIR$/kir-web/src/main/kotlin/com/github/jepemo/kir/web/Responses.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding>
-            <element signature="e#35#121#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="506">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2390,18 +2368,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/web/Views.kt">
+    <entry file="file://$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Dom.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        <state relative-caret-position="440">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="e#35#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kir-dom/src/main/kotlin/com/github/jepemo/kir/dom/Component.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kir-web/src/main/kotlin/com/github/jepemo/kir/web/Responses.kt">
+    <entry file="file://$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/dom/SimpleComponent.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="58" lean-forward="false" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+        <state relative-caret-position="154">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#44#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/web/Views.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding />
         </state>
       </provider>
