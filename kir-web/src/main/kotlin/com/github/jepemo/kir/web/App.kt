@@ -20,6 +20,16 @@ annotation class Route(
     val method: Array<HttpMethod> = arrayOf(HttpMethod.GET, HttpMethod.POST)
 )
 
+annotation class Group(
+    val path: String
+)
+
+annotation class Default(
+    val path: String = "/",
+    val responseType: String = "text/plain",
+    val method: Array<HttpMethod> = arrayOf(HttpMethod.GET)
+)
+
 class App {
     companion object {
         private val logger = KotlinLogging.logger {}

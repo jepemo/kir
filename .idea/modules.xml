@@ -11,6 +11,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kir-boot.iml" filepath="$PROJECT_DIR$/.idea/modules/kir-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kir-boot_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kir-boot_main.iml" group="kir-boot" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kir-boot_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kir-boot_test.iml" group="kir-boot" />
+      <module fileurl="file://$USER_HOME$/tmp/untitled/.idea/modules/sampleapp.iml" filepath="$USER_HOME$/tmp/untitled/.idea/modules/sampleapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sampleapp_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sampleapp_main.iml" group="sampleapp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sampleapp_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sampleapp_test.iml" group="sampleapp" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398500064/web.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398500064/web.iml" group="web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398500064/web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398500064/web_main.iml" group="web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398500064/web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398500064/web_test.iml" group="web" />
