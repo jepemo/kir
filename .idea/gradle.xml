@@ -14,21 +14,10 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/kir-dom" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/kir-dom" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/kir-examples" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/kir-dom" />
             <option value="$PROJECT_DIR$/kir-examples" />
             <option value="$PROJECT_DIR$/kir-web" />
           </set>
@@ -51,9 +40,19 @@
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/kir-dom" />
-            <option value="$PROJECT_DIR$/sampleapp" />
             <option value="$PROJECT_DIR$/kir-web" />
+            <option value="$PROJECT_DIR$/sampleapp" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server-vertex-wrapper" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/kir-web" />
+            <option value="$PROJECT_DIR$/server-vertex-wrapper" />
           </set>
         </option>
       </GradleProjectSettings>

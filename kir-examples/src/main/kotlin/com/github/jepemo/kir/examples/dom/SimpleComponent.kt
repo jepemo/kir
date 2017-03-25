@@ -1,7 +1,6 @@
 package com.github.jepemo.kir.examples.dom
 
-import com.github.jepemo.kir.dom.Dom
-import kotlinx.html.h1
+import com.github.jepemo.kir.web.dom.Dom
 import org.junit.Assert
 import org.junit.Test
 

@@ -1,0 +1,4 @@
+rootProject.name = 'server-vertex-wrapper'
+
+include 'web'
+project(':web').projectDir = new File('../kir-web')

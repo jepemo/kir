@@ -24,5 +24,4 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
 
     compile project(path: ':web')
-    compile project(path: ':dom')
 }

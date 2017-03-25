@@ -1,7 +1,7 @@
 package com.github.jepemo.kir.web
 
-import io.vertx.ext.web.RoutingContext
 import mu.KotlinLogging
+import java.util.*
 
 enum class HttpMethod {
     OPTIONS,
@@ -32,15 +32,23 @@ annotation class Default(
 
 class App {
     companion object {
+        /** */
         private val logger = KotlinLogging.logger {}
-        private val server = KirHttpServer()
+        /** */
+        private var routes: MutableMap<String, View> = HashMap()
 
-        fun addRoute(path: String, handler: (RoutingContext) -> Unit) {
-            server.addRoute(path, handler)
-        }
+        private var httpWrapper : Class<*> = Class.forName("com.github.jepemo.kir.server-vertx-wrapper")
+            set(value) {
+                httpWrapper = value
+            }
+
+
+//        fun addRoute(path: String, handler: (RoutingContext) -> Unit) {
+//            server.addRoute(path, handler)
+//        }
 
         fun addRoute(path: String, view: View) {
-            server.addRoute(path, view)
+            routes.put(path, view)
         }
 
         fun setupConsoleLog() {
@@ -48,9 +56,16 @@ class App {
         }
 
         fun start() {
+            // Instantiate the server
+            val server = httpWrapper.newInstance() as KirHttpServer
+
             val pathRoutes = Reflections.getPathRoutes()
             for((path, method) in pathRoutes) {
                 server.addRoute(path, method)
+            }
+
+            for((path, view) in routes) {
+                server.addRoute(path, view)
             }
 
             server.start()
