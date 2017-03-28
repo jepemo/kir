@@ -1,9 +1,9 @@
 package com.github.jepemo.kir.sampleapp.api
 
-import com.github.jepemo.kir.web.Default
-import com.github.jepemo.kir.web.Group
-import com.github.jepemo.kir.web.HttpMethod
-import com.github.jepemo.kir.web.Route
+import com.github.jepemo.kir.web.http.Default
+import com.github.jepemo.kir.web.http.Group
+import com.github.jepemo.kir.web.http.HttpMethod
+import com.github.jepemo.kir.web.http.Route
 
 
 @Group("/user")

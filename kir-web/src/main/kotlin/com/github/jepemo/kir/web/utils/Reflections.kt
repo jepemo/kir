@@ -1,5 +1,6 @@
-package com.github.jepemo.kir.web
+package com.github.jepemo.kir.web.utils
 
+import com.github.jepemo.kir.web.http.Route
 import java.io.File
 import java.io.IOException
 import java.util.*
@@ -60,8 +61,8 @@ class Reflections {
         fun getPathRoutes(): Map<String, KFunction<*>> {
             val routes = HashMap<String, KFunction<*>>()
 
-            val pkgName = Reflections.getCallingPackage()!!.getName()
-            val classes = Reflections.getClasses(pkgName);
+            val pkgName = getCallingPackage()!!.getName()
+            val classes = getClasses(pkgName);
 
             for (c in classes) {
                 for (m in c.methods) {

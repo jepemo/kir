@@ -1,4 +1,4 @@
-package com.github.jepemo.kir.web
+package com.github.jepemo.kir.web.http
 
 sealed class HttpResponse (val statusCode: Int, val contentType: String? = null, val out: String? = null) {
     class Ok(out: String) : HttpResponse(200, "text/plain", out)

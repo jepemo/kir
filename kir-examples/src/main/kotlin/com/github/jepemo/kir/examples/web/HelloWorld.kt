@@ -1,7 +1,9 @@
 package com.github.jepemo.kir.examples.web.helloworld
 
 import com.github.jepemo.kir.web.*
-import com.github.jepemo.kir.web.HttpResponse.*
+import com.github.jepemo.kir.web.http.HttpResponse.*
+import com.github.jepemo.kir.web.http.App
+import com.github.jepemo.kir.web.http.Route
 
 @Route("/")
 fun hello () = "Hello World"

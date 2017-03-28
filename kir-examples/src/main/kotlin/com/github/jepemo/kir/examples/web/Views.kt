@@ -1,11 +1,11 @@
 package com.github.jepemo.kir.examples.web
 
 import com.github.jepemo.kir.dom.Dom
-import com.github.jepemo.kir.web.App
-import com.github.jepemo.kir.web.HttpResponse
-import com.github.jepemo.kir.web.HttpResponse.*
-import com.github.jepemo.kir.web.Route
-import com.github.jepemo.kir.web.View
+import com.github.jepemo.kir.web.http.App
+import com.github.jepemo.kir.web.http.HttpResponse
+import com.github.jepemo.kir.web.http.HttpResponse.*
+import com.github.jepemo.kir.web.http.Route
+import com.github.jepemo.kir.web.http.View
 import kotlinx.html.*
 
 class HelloView : View() {

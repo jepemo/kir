@@ -1,9 +1,9 @@
 package com.github.jepemo.kir.examples.web.simplerest
 
-import com.github.jepemo.kir.web.App
-import com.github.jepemo.kir.web.HttpMethod
-import com.github.jepemo.kir.web.HttpResponse.*
-import com.github.jepemo.kir.web.Route
+import com.github.jepemo.kir.web.http.App
+import com.github.jepemo.kir.web.http.HttpMethod
+import com.github.jepemo.kir.web.http.HttpResponse.*
+import com.github.jepemo.kir.web.http.Route
 
 @Route("/user/:id")
 fun findUser(id: String) = mapOf("id" to id, "name" to "Sherlock", "surname" to "Holmes", "active" to true)

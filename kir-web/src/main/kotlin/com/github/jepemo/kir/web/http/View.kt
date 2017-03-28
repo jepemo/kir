@@ -1,9 +1,7 @@
-package com.github.jepemo.kir.web
-
-import io.vertx.ext.web.RoutingContext
+package com.github.jepemo.kir.web.http
 
 abstract class View() {
-    var cxt: RoutingContext? = null
+    var cxt: Context? = null
 
     open fun get() : HttpResponse {
         return HttpResponse.Ok("")

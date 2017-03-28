@@ -1,9 +1,14 @@
 package com.github.jepemo.kir.server_vertx_wrapper
 
 import com.github.jepemo.kir.dom.HtmlDom
-import com.github.jepemo.kir.web.HttpResponse.Error
-import com.github.jepemo.kir.web.HttpResponse.Text
+import com.github.jepemo.kir.web.http.Context
+import com.github.jepemo.kir.web.http.HttpResponse
+import com.github.jepemo.kir.web.http.HttpResponse.Error
+import com.github.jepemo.kir.web.http.HttpResponse.Text
+import com.github.jepemo.kir.web.http.KirHttpServer
+import com.github.jepemo.kir.web.http.View
 import io.vertx.core.Vertx
+import io.vertx.core.http.HttpServerOptions
 import io.vertx.core.json.JsonObject
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.RoutingContext
@@ -15,8 +20,20 @@ import kotlin.reflect.KParameter
 import kotlin.reflect.KType
 import kotlin.reflect.jvm.javaType
 
-class KirVertxHttpServer (var port: Int = 8080) : KirHttpServer {
+class KirVertxHttpServer : KirHttpServer {
     companion object: KLogging()
+
+    override var host: String = "localhost"
+        get() =  field
+        set (value){
+            field = value
+        }
+
+    override var port: Int = 8080
+        get() = field
+        set(value) {
+            field = value
+        }
 
     val vertx = Vertx.vertx()
     val router = Router.router(vertx)
@@ -25,18 +42,18 @@ class KirVertxHttpServer (var port: Int = 8080) : KirHttpServer {
         router.route().handler(BodyHandler.create())
     }
 
-    fun start() {
-        vertx.createHttpServer().requestHandler{ router.accept(it) }.listen(port);
+    override fun start() {
+        val options: HttpServerOptions = HttpServerOptions()
+            options.port = port
+            options.host = host
+
+        vertx.createHttpServer(options).requestHandler{ router.accept(it) }.listen()
     }
 
-    fun addRoute(path: String, handler: (RoutingContext) -> Unit) {
-        router.get(path).handler(handler)
-    }
-
-    fun addRoute(path: String, view: View) {
+    override fun addRoute(path: String, view: View) {
         logger.info { "* Registering: " + path }
         router.get(path).handler { routingContext ->
-            view.cxt = routingContext
+            view.cxt = toKirContext(routingContext)
             val res = view.get()
 
             val response = routingContext.response()
@@ -46,7 +63,7 @@ class KirVertxHttpServer (var port: Int = 8080) : KirHttpServer {
             response.end(res.out)
         }
         router.post(path).handler { routingContext ->
-            view.cxt = routingContext
+            view.cxt = toKirContext(routingContext)
             val res = view.post()
 
             val response = routingContext.response()
@@ -57,9 +74,11 @@ class KirVertxHttpServer (var port: Int = 8080) : KirHttpServer {
         }
     }
 
-//    fun addGet(path: String)
+    private fun toKirContext(routingContext: RoutingContext?): Context? {
+        return null
+    }
 
-    fun addRoute(path: String, method: KFunction<*>) {
+    override fun addRoute(path: String, method: KFunction<*>) {
         logger.info { "* Registering: " + path }
 
         val params = if (method.parameters.isNotEmpty()) {

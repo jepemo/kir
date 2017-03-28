@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398518002/dom.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398518002/dom.iml" group="dom" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398518002/dom_main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398518002/dom_main.iml" group="dom" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398518002/dom_test.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398518002/dom_test.iml" group="dom" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/examples.iml" filepath="$PROJECT_DIR$/.idea/modules/examples.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/examples_main.iml" filepath="$PROJECT_DIR$/.idea/modules/examples_main.iml" group="examples" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/examples_test.iml" filepath="$PROJECT_DIR$/.idea/modules/examples_test.iml" group="examples" />
@@ -14,9 +11,6 @@
       <module fileurl="file://$USER_HOME$/tmp/untitled/.idea/modules/sampleapp.iml" filepath="$USER_HOME$/tmp/untitled/.idea/modules/sampleapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sampleapp_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sampleapp_main.iml" group="sampleapp" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sampleapp_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sampleapp_test.iml" group="sampleapp" />
-      <module fileurl="file://$USER_HOME$/tmp/untitled1/.idea/modules/server-vertex-wrapper.iml" filepath="$USER_HOME$/tmp/untitled1/.idea/modules/server-vertex-wrapper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server-vertex-wrapper_main.iml" filepath="$PROJECT_DIR$/.idea/modules/server-vertex-wrapper_main.iml" group="server-vertex-wrapper" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server-vertex-wrapper_test.iml" filepath="$PROJECT_DIR$/.idea/modules/server-vertex-wrapper_test.iml" group="server-vertex-wrapper" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398500064/web.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398500064/web.iml" group="web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398500064/web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398500064/web_main.iml" group="web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1398500064/web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/-1398500064/web_test.iml" group="web" />

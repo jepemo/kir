@@ -2,8 +2,9 @@ group 'com.github.jepemo.kir.web'
 version '0.1'
 
 buildscript {
-    ext.kotlin_version = '1.1.0'
+    ext.kotlin_version = '1.1.1'
     ext.kotlinx_version = '0.6.2'
+    ext.vertx_version = '3.3.3'
 
     repositories {
         mavenCentral()
@@ -20,7 +21,10 @@ sourceSets {
 }
 
 repositories {
-    mavenCentral()
+    jcenter()
+    maven {
+        url "http://dl.bintray.com/kotlinx/kotlinx"
+    }
 }
 
 dependencies {
@@ -29,4 +33,5 @@ dependencies {
     compile "org.jetbrains.kotlinx:kotlinx-html-jvm:${kotlinx_version}"
     compile 'io.github.microutils:kotlin-logging:1.4.2'
     compile 'org.slf4j:slf4j-simple:1.7.24'
+    compile "io.vertx:vertx-web:$vertx_version"
 }
