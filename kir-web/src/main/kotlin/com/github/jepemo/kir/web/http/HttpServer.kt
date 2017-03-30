@@ -33,6 +33,10 @@ annotation class Default(
         val method: Array<HttpMethod> = arrayOf(HttpMethod.GET)
 )
 
+interface Context {
+    fun getParam(paramName: String): String?
+}
+
 /** */
 interface KirHttpServer {
     /** */

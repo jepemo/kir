@@ -1,10 +1,9 @@
-package com.github.jepemo.kir.server_vertx_wrapper
+package com.github.jepemo.kir.web.http.impl.vertx
 
 import com.github.jepemo.kir.dom.HtmlDom
 import com.github.jepemo.kir.web.http.Context
 import com.github.jepemo.kir.web.http.HttpResponse
-import com.github.jepemo.kir.web.http.HttpResponse.Error
-import com.github.jepemo.kir.web.http.HttpResponse.Text
+import com.github.jepemo.kir.web.http.HttpResponse.*
 import com.github.jepemo.kir.web.http.KirHttpServer
 import com.github.jepemo.kir.web.http.View
 import io.vertx.core.Vertx
@@ -20,7 +19,7 @@ import kotlin.reflect.KParameter
 import kotlin.reflect.KType
 import kotlin.reflect.jvm.javaType
 
-class KirVertxHttpServer : KirHttpServer {
+class VxHttpServer : KirHttpServer {
     companion object: KLogging()
 
     override var host: String = "localhost"
@@ -51,7 +50,7 @@ class KirVertxHttpServer : KirHttpServer {
     }
 
     override fun addRoute(path: String, view: View) {
-        logger.info { "* Registering: " + path }
+//        KLogging.logger.info { "* Registering: " + path }
         router.get(path).handler { routingContext ->
             view.cxt = toKirContext(routingContext)
             val res = view.get()
@@ -75,11 +74,11 @@ class KirVertxHttpServer : KirHttpServer {
     }
 
     private fun toKirContext(routingContext: RoutingContext?): Context? {
-        return null
+        return VxContext(routingContext!!)
     }
 
     override fun addRoute(path: String, method: KFunction<*>) {
-        logger.info { "* Registering: " + path }
+//        KLogging.logger.info { "* Registering: " + path }
 
         val params = if (method.parameters.isNotEmpty()) {
             extractParams(path)
@@ -113,7 +112,7 @@ class KirVertxHttpServer : KirHttpServer {
             }
             else {
                 // parameter #0 to of fun helloTo(kotlin.String): kotlin.String -> world
-                println ("Arguments:")
+//                println ("Arguments:")
                 for ((k, v) in args) {
                     println ("$k -> $v")
                 }
@@ -137,16 +136,16 @@ class KirVertxHttpServer : KirHttpServer {
             httpResponse = Text(result as String)
         }
         else if (type.javaType.typeName.startsWith("java.util.Map")) {
-            httpResponse = HttpResponse.Json(JsonObject(result as Map<String, Any?>).toString())
+            httpResponse = Json(JsonObject(result as Map<String, Any?>).toString())
         }
         else if (type.javaType.typeName.startsWith("com.github.jepemo.kir.dom.HtmlDom")) {
-            httpResponse = HttpResponse.Html((result as HtmlDom).content)
+            httpResponse = Html((result as HtmlDom).content)
         }
         else if (result is HttpResponse) {
             httpResponse = result
         }
         else {
-            logger.error { "Incorrect return type <$type> for router" }
+//            KLogging.logger.error { "Incorrect return type <$type> for router" }
             System.exit(1)
         }
 

@@ -1,6 +1,6 @@
 package com.github.jepemo.kir.web.http
 
-import com.github.jepemo.kir.server_vertx_wrapper.KirVertxHttpServer
+import com.github.jepemo.kir.web.http.impl.vertx.VxHttpServer
 import com.github.jepemo.kir.web.utils.Reflections
 import mu.KotlinLogging
 import org.slf4j.impl.SimpleLogger
@@ -14,7 +14,7 @@ class App {
         /** */
         private var routes: MutableMap<String, View> = HashMap()
 
-        private var httpWrapper : KClass<*> = KirVertxHttpServer::class
+        private var httpWrapper : KClass<*> = VxHttpServer::class
             set(value) {
                 httpWrapper = value
             }

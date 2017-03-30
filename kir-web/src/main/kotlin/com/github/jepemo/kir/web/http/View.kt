@@ -1,6 +1,6 @@
 package com.github.jepemo.kir.web.http
 
-abstract class View() {
+abstract class View {
     var cxt: Context? = null
 
     open fun get() : HttpResponse {
