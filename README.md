@@ -1,5 +1,5 @@
 # kir
-KIR is an isomorphic Web Micro Framework for the [Kotlin](https://kotlinlang.org/) platform, influenced by [RedStone](http://redstonedart.org/) and [Meteor](https://www.meteor.com/).
+KIR is an isomorphic Web Micro Framework for the [Kotlin](https://kotlinlang.org/) platform, influenced by [RedStone](http://redstonedart.org/) and [Meteor](https://www.meteor.com/) & [React](https://reactjs.org/).
 
 ### Example
 Kir allows to use simple annotations to create the endpoints.
