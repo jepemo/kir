@@ -1,6 +1,11 @@
 # kir
 KIR is an isomorphic Web Micro Framework for the [Kotlin](https://kotlinlang.org/) platform, influenced by [RedStone](http://redstonedart.org/) and [Meteor](https://www.meteor.com/) & [React](https://reactjs.org/).
 
+- [Example](#example)
+- [Installation](#installation)
+- [Documentation](#documentation)
+- [More examples](#more-examples)
+
 ### Example
 Kir allows to use simple annotations to create the endpoints.
 
@@ -55,5 +60,10 @@ kb help
 * [Routes](doc/routes.md)
 * [kb - Tutorial](doc/kb_tutorial.md)
 * [kb - Reference](doc/kb_reference.md)
+
+### More examples
+* [Views](https://github.com/jepemo/kir/blob/master/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/web/Views.kt)
+* [Rest Service](https://github.com/jepemo/kir/blob/master/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/web/SimpleRest.kt)
+* [Web Component](https://github.com/jepemo/kir/blob/master/kir-examples/src/main/kotlin/com/github/jepemo/kir/examples/dom/SimpleComponent.kt)
 
  
